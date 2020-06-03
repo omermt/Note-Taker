@@ -1,0 +1,101 @@
+<script type="text/javascript" src="/assetsvendor/socket.io/socket.io.js"></script>
+<script type="text/javascript" src="/static/javascripts/signupvalidation.js">
+
+</script>
+<div class="container-fluid align-content-center">
+  <div class="py-5">
+    <div class="row">
+      <div class="col d-flex justify-content-center align-content-end">
+        <span><i class="fas fa-scroll h3" aria-hidden="true"></i></span>
+      </div>
+    </div>
+    <h1 class=" h3 text-center spaceMe3px">Sign Up here, it's free</h1>
+  </div>
+  <div class="row px-3 px-sm-3">
+    <div class="col">
+    </div>
+    <div class="col-sm-6 col-12 border border-dark py-5 rounded shadow-lg">
+      <form class="col justify-content-center" method="post" action="" id="form">
+        <div class="form-group row px-2 py-2">
+          <label for="user_name" class="col-2 form-control-label mx-0 px-0 text-center mb-0 pt-2"><i class="fa fa-user" aria-hidden="true"></i></label>
+          <div class="col-10 pl-0">
+            <input type="text" class="form-control" id="username" name="username" placeholder="awesomeUsernameHere">
+            <div class="invalid-feedback" id="inusernameFeedback">
+
+            </div>
+            <div class="valid-feedback" id="usernameFeedback">
+
+            </div>
+          </div>
+        </div>
+        <div class="form-group row px-2 py-2 mb-1">
+          <label for="password" class="col-2 form-control-label mx-0 px-0 text-center mb-0 pt-2"><i class="fa fa-key" aria-hidden="true"></i></label>
+          <div class="col-5 pl-0">
+            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+            <div class="invalid-feedback" id="inpassFeedback">
+              <!-- To be filled dinamically -->
+            </div>
+            <div class="valid-feedback" id="passFeedback">
+              <!-- To be filled dinamically -->
+            </div>
+          </div>
+          <div class="col-5 pl-0">
+            <input type="password" class="form-control" id="password_2" name="password_2" placeholder="Do it Again">
+            <div class="invalid-feedback" id="inpass2Feedback">
+              <!-- To be filled dinamically -->
+            </div>
+            <div class="valid-feedback" id="pass2Feedback">
+              <!-- To be filled dinamically -->
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <small class="text-muted pl-4">
+                Keep it safe.
+              </small>
+            </div>
+          </div>
+        </div>
+        <div class="form-group row px-2 pb-2 pt-1">
+          <label for="emailField" class="col-2 form-control-label mx-0 px-0 text-center mb-0 pt-2"><i class="fa fa-at" aria-hidden="true"></i></label>
+          <div class="col-10 pl-0">
+            <input type="text" class="form-control" id="emailField" name="email" placeholder="exmaple@mail.com">
+          </div>
+          <div class="row">
+            <div class="col">
+              <small class="text-muted pl-4">
+                This field isn't needed, we won't do anything with this.
+              </small>
+            </div>
+          </div>
+        </div>
+        <div class="form-group row px-2 py-2">
+          <div class="col">
+            <div class="custom-control custom-checkbox px-3">
+              <input type="checkbox" id="nastyCheck" class="custom-control-input">
+              <label class="custom-control-label" for="nastyCheck">
+                I will not upload nasty things here
+              </label>
+              <div class="invalid-feedback" id="incheckFeedback">
+                <!-- To be filled dinamically -->
+              </div>
+              <div class="valid-feedback" id="checkFeedback">
+                <!-- To be filled dinamically -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group row pt-3 mb-0 px-3">
+          <div class="col">
+            <a class="btn btn-outline-primary" href="/login">Log in</a>
+          </div>
+          <div class="col d-flex justify-content-end">
+            <button type="submit" class="btn btn-outline-primary" id="submitButton">Sign Up</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col">
+    </div>
+  </div>
+</div>

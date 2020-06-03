@@ -1,0 +1,55 @@
+<script type="text/javascript" src="/assetsvendor/socket.io/socket.io.js"></script>
+<script type="text/javascript" src="/static/javascripts/socketScript.js"></script>
+<div class="container-fluid">
+  <div class="row mt-3 h-100">
+    <form method="post" action="{{#if noteTitle}} /note/save {{else}} /note/new {{/if}}"  class="col-12" id="form">
+      <div class="row">
+      <div class="col-12 col-md-6">
+        <fieldset class="form-group form-row">
+          <div class="input-group-prepend col-4 justify-content-end">
+            <span class="input-group-text" id="validatedInputGroupPrepend">Title</span>
+          </div>
+          <input type="text" class="form-control col-8 text-center" id="noteTitle" name="title" {{#if noteTitle}} value="{{noteTitle}}" {{else}} placeholder="Short and Nice" {{/if}}>
+          <div id="noteTitleFeedback" class="ml-5 pl-5"></div>
+        </fieldset>
+        <fieldset class="form-group form-row">
+          <input type="text" hidden name="id" value={{id}}> <!-- If new note, no id will be used -->
+          <div class="input-group-prepend col-4 justify-content-end">
+            <label class="input-group-text" for="validatedInputGroupSelect">Category</label>
+          </div>
+          <select class="custom-select col-8 text-center" id="noteCategory" name="cat">
+            <option selected value="important">Important</option>
+            <option value="work">Work</option>
+            <option value="extra">Extra</option>
+            <option value="todo">To Do</option>
+            <option value="unclassified">Unclassified</option>
+          </select>
+        </fieldset>
+        <fieldset class="form-group mr-n1">
+          <textarea class="form-control" id="noteBody" rows="12" name="body">{{# if body}} {{body}} {{else}} Body of the note, here.{{/if}}</textarea>
+          <small><i class="fab fa-markdown h5" aria-hidden="true"></i> Markdown is supported!</small>
+        </fieldset>
+      </div>
+      <div class="col-12 col-md-6">
+        <!-- Markdown thing here -->
+        <button class="btn btn-outline-info dropdown-toggle w-100 d-md-none my-2" type="button" id="dropdownButton" aria-haspopup="true" aria-expanded="false">
+          Preview of the Markdown File
+        </button>
+        <div id="markdownPreview" class="overflow-auto my-2 maxHeight100px"></div>
+      </div>
+      <div class="col-12">
+        <div class="row">
+          <div class="col">
+            <button type="submit" class="btn btn-primary">{{# if noteTitle}} Update {{else}} Save {{/if}}</button>
+            <!-- Add a red delete button if the note it's already created -->
+            {{#if noteTitle }}
+            <a class="btn btn-danger" href="{{deleteURL id}}" role="button">Delete</a>
+            {{/if}}
+            <a href="/notes" class="btn btn-outline-dark"> Back</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    </form>
+  </div>
+</div>

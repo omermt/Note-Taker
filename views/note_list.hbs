@@ -1,0 +1,172 @@
+<div class="container-fluid">
+  <div class="container-fluid">
+    <ul class="nav nav-tabs nav-fill mt-3" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <a href="/note" class="nav-link"><i class="fa fa-plus" aria-hidden="true"></i></a>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link active alert-danger px-1" id="important-tab" data-toggle="tab" href="#important" role="tab" aria-controls="home" aria-selected="true">
+          Important
+          <span class="badge badge-danger mx-2"><i class="fa fa-sticky-note" aria-hidden="true"></i> {{important.length}} </span>
+        </a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link alert-primary px-1" id="work-tab" data-toggle="tab" href="#work" role="tab" aria-controls="important" aria-selected="false">
+          Work
+          <span class="badge badge-primary mx-2"><i class="fa fa-sticky-note" aria-hidden="true"></i> {{work.length}} </span>
+        </a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link alert-success px-1" id="extra-tab" data-toggle="tab" href="#extra" role="tab" aria-controls="extra" aria-selected="false">
+          Extra
+          <span class="badge badge-success mx-2"><i class="fa fa-sticky-note" aria-hidden="true"></i> {{extra.length}} </span>
+        </a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link alert-warning px-1" id="todo-tab" data-toggle="tab" href="#todo" role="tab" aria-controls="profile" aria-selected="false">
+          To Do
+          <span class="badge badge-warning mx-2"><i class="fa fa-sticky-note" aria-hidden="true"></i> {{todo.length}} </span>
+        </a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link alert-dark px-1" id="unclassified-tab" data-toggle="tab" href="#unclassified" role="tab" aria-controls="unclassified" aria-selected="false">
+          Unclassified
+          <span class="badge badge-dark mx-2"><i class="fa fa-sticky-note" aria-hidden="true"></i> {{unclassified.length}} </span>
+        </a>
+      </li>
+    </ul>
+    <div class="container-fluid overflow-auto fixedHeight400px">
+      <div class="tab-content mx-2 py-3 " id="myTabContent">
+        <div class="tab-pane fade show active" id="important" role="tabpanel" aria-labelledby="home-tab">
+          <ul class="list-group list-group-flush">
+            {{# if important}}
+              {{#each important}}
+                <li class="list-group-item">
+                  <div class="container-fluid">
+                    {{title}}
+                    <a href="{{viewURL id}}" class="badge badge-light mx-1">
+                      <i class="fa fa-eye" aria-hidden="true"></i>
+                    </a>
+                    <a class="badge badge-light mx-1" href="{{noteURL id}}">
+                      <i class="fa fa-pen-square" aria-hidden="true"></i>
+                    </a>
+                    <a class="badge badge-light mx-1" href="{{deleteURL id}}">
+                      <i class="fa fa-times" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </li>
+              {{/each}}
+            {{else}}
+            <li class="list-group-item">No notes added here, if you feel like you need a note, click on the
+              <span class=""><i class="fa fa-plus" aria-hidden="true"></i></span> sign besides the category name!</li>
+            <li class="list-group-item"></li>
+            {{/if}}
+          </ul>
+        </div>
+        <div class="tab-pane fade" id="work" role="tabpanel" aria-labelledby="profile-tab">
+          <ul class="list-group list-group-flush">
+            {{# if work}}
+              {{#each work}}
+                <li class="list-group-item">
+                  <div class="container-fluid">
+                    {{title}}
+                    <a href="{{viewURL id}}" class="badge badge-light mx-1">
+                      <i class="fa fa-eye" aria-hidden="true"></i>
+                    </a>
+                    <a class="badge badge-light mx-1" href="{{noteURL id}}">
+                      <i class="fa fa-pen-square" aria-hidden="true"></i>
+                    </a>
+                    <a class="badge badge-light mx-1" href="{{deleteURL id}}">
+                      <i class="fa fa-times" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </li>
+              {{/each}}
+            {{else}}
+            <li class="list-group-item">No notes added here, if you feel like you need a note, click on the
+              <span class=""><i class="fa fa-plus" aria-hidden="true"></i></span> sign at in the category name!</li>
+            <li class="list-group-item"></li>
+            {{/if}}
+          </ul>
+        </div>
+        <div class="tab-pane fade" id="extra" role="tabpanel" aria-labelledby="contact-tab">
+          <ul class="list-group list-group-flush">
+            {{# if extra}}
+              {{#each extra}}
+                <li class="list-group-item">
+                  <div class="container-fluid">
+                    {{title}}
+                    <a href="{{viewURL id}}" class="badge badge-light mx-1">
+                      <i class="fa fa-eye" aria-hidden="true"></i>
+                    </a>
+                    <a class="badge badge-light mx-1" href="{{noteURL id}}">
+                      <i class="fa fa-pen-square" aria-hidden="true"></i>
+                    </a>
+                    <a class="badge badge-light mx-1" href="{{deleteURL id}}">
+                      <i class="fa fa-times" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </li>
+              {{/each}}
+            {{else}}
+            <li class="list-group-item">No notes added here, if you feel like you need a note, click on the
+              <span class=""><i class="fa fa-plus" aria-hidden="true"></i></span> sign at in the category name!</li>
+            <li class="list-group-item"></li>
+            {{/if}}
+          </ul>
+        </div>
+        <div class="tab-pane fade" id="todo" role="tabpanel" aria-labelledby="todo-tab">
+          <ul class="list-group list-group-flush">
+            {{# if todo}}
+              {{#each todo}}
+                <li class="list-group-item">
+                  <div class="container-fluid">
+                    {{title}}
+                    <a href="{{viewURL id}}" class="badge badge-light mx-1">
+                      <i class="fa fa-eye" aria-hidden="true"></i>
+                    </a>
+                    <a class="badge badge-light mx-1" href="{{noteURL id}}">
+                      <i class="fa fa-pen-square" aria-hidden="true"></i>
+                    </a>
+                    <a class="badge badge-light mx-1" href="{{deleteURL id}}">
+                      <i class="fa fa-times" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </li>
+              {{/each}}
+            {{else}}
+            <li class="list-group-item">No notes added here, if you feel like you need a note, click on the
+              <span class=""><i class="fa fa-plus" aria-hidden="true"></i></span> sign at in the category name!</li>
+            <li class="list-group-item"></li>
+            {{/if}}
+          </ul>
+        </div>
+        <div class="tab-pane fade" id="unclassified" role="tabpanel" aria-labelledby="unclassified-tab">
+          <ul class="list-group list-group-flush">
+            {{# if unclassified}}
+              {{#each unclassified}}
+                <li class="list-group-item">
+                  <div class="container-fluid">
+                    {{title}}
+                    <a href="{{viewURL id}}" class="badge badge-light mx-1">
+                      <i class="fa fa-eye" aria-hidden="true"></i>
+                    </a>
+                    <a class="badge badge-light mx-1" href="{{noteURL id}}">
+                      <i class="fa fa-pen-square" aria-hidden="true"></i>
+                    </a>
+                    <a class="badge badge-light mx-1" href="{{deleteURL id}}">
+                      <i class="fa fa-times" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </li>
+              {{/each}}
+            {{else}}
+            <li class="list-group-item">No notes added here, if you feel like you need a note, click on the
+              <span class=""><i class="fa fa-plus" aria-hidden="true"></i></span> sign at in the category name!</li>
+            <li class="list-group-item"></li>
+            {{/if}}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

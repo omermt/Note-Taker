@@ -1,0 +1,60 @@
+{{#with user}}
+<div class="container-fluid">
+  <div class="row mt-3 mt-sm-5">
+    <div class="col-12 col-sm-9">
+      <form class="col justify-content-center" method="post" action="">
+        <div class="form-group row px-2 py-2">
+          <label for="user_name" class="col-2 form-control-label mx-0 px-0 text-center mb-0 pt-2"><i class="fa fa-user h2" aria-hidden="true"></i></label>
+          <div class="col-10 pl-0">
+            <input type="text" class="form-control" id="user_name" placeholder="{{user_name}}" readonly>
+          </div>
+        </div>
+        <div class="form-group row px-2 py-2 mb-1">
+          <label for="password" class="col-2 form-control-label mx-0 px-0 text-center mb-0 pt-2"><i class="fa fa-key h2" aria-hidden="true"></i></label>
+          <div class="col-5 pl-0">
+            <input type="password" class="form-control" id="password" name="password" placeholder="Current Password">
+          </div>
+          <div class="col-5 pl-0">
+            <input type="password" class="form-control" id="password2" name="password2" placeholder="New Password (optional)">
+          </div>
+          <div class="ml-5 pl-sm-4 row">
+            <div class="col">
+              <small class="text-muted pl-4">
+                Keep it safe.
+              </small>
+            </div>
+          </div>
+        </div>
+        <div class="form-group row px-2 pb-2 pt-1">
+          <label for="emailField" class="col-2 form-control-label mx-0 px-0 text-center mb-0 pt-2"><i class="fa fa-at h2" aria-hidden="true"></i></label>
+          <div class="col-10 pl-0">
+            <input type="text" class="form-control" id="emailField" name="email" {{#if email}} value="{{email}}"{{else}} placeholder= "example@mail.com" {{/if}}>
+          </div>
+          <div class="ml-5 pl-sm-4 row">
+            <div class="col">
+              <small class="text-muted pl-4">
+                This field isn't needed, we won't do anything with this ;).
+              </small>
+            </div>
+          </div>
+        </div>
+        <div class="form-group row pt-3 mb-0 px-3">
+          <div class="col-6 d-flex justify-content-end">
+            <button button type="submit" class="btn btn-outline-primary" >Save changes</button>
+          </div>
+          <div class="col-6 d-flex justify-content-center px-0">
+            <a type="submit" class="btn btn-danger" href="/notes">Cancel</a>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col col-sm-3 d-flex align-items-end">
+      <div class="mt-4">
+        <p class="mb-0"><small>Account Created: {{createdAt}}</small></p>
+        <p class="mb-0"><small>Last Log In: {{last_login}}</small></p>
+        {{/with}}
+        <p class="mt-0"> <small>Notes taken: {{notesTaken}}</small></p>
+      </div>
+    </div>
+  </div>
+</div>

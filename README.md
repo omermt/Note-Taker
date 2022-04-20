@@ -1,8 +1,8 @@
-# Hello
+# Note Taker
 
-This is a small Note Taker Web Site, fully functional.
-
-The Idea is simple, just Log In and Star writing your notes, saved in a database and folding support through categories.
+The Note Taker App is one of the first projects that I made, is built with JQuery and Express, in a traditional MVC way. It's the first approach in creating an application that allows the user to create notes, in Markdown, and edit / view them live on the web, across devices.
+      
+The application has an authentication feature, along with a Sequelize database, allows multiple users to sign in, create notes, and persist them across sessions. Besides JQuery, the server uses Handlebars.
 
 ## Technical Details
 
